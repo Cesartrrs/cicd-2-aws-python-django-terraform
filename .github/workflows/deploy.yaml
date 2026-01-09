@@ -25,6 +25,16 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
 
+      - name: Debug paths
+        run: |
+          pwd
+          ls
+          ls infra || true
+          ls infra/terraform || true
+          ls infra/terraform/envs || true
+          ls infra/terraform/envs/dev || true
+
+
       - name: Terraform Init
         working-directory: infra/terraform/envs/dev
         run: terraform init -reconfigure
