@@ -34,6 +34,8 @@ jobs:
           ls infra/terraform/envs || true
           ls infra/terraform/envs/dev || true
 
+      - name: Who am I in AWS?
+        run: aws sts get-caller-identity
 
       - name: Terraform Init
         working-directory: infra/terraform/envs/dev
@@ -44,3 +46,9 @@ jobs:
         run: |
           terraform apply -auto-approve \
             -var="image_tag=${{ github.event.inputs.image_tag }}"
+
+      - name: Terraform outputs
+        working-directory: infra/terraform/envs/dev
+        run: terraform output
+
+      
