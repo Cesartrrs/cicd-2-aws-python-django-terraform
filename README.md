@@ -39,7 +39,7 @@ La infraestructura se puede **levantar y destruir bajo demanda** para minimizar 
 
 ---
 
-## Estructura del proyecto
+``` Estructura del proyecto
 ├── app/ # Aplicación Django
 │ ├── Dockerfile
 │ ├── requirements.txt
@@ -53,7 +53,7 @@ La infraestructura se puede **levantar y destruir bajo demanda** para minimizar 
 └── workflows/
 ├── ci.yml # Build & push imagen
 └── deploy.yml # Deploy con Terraform
-
+```
 
 ---
 
